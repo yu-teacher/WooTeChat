@@ -83,20 +83,20 @@
 ## 5. 설정 계층
 
 ### 5.1. WebSocketConfig
-- [ ] STOMP 엔드포인트 등록 (`/ws-chat`)
-- [ ] 메시지 브로커 설정 (`/topic`, `/app`)
-- [ ] ChannelInterceptor 추가
-    - [ ] SUBSCRIBE 시 roomId/username 세션에 저장
+- [x] STOMP 엔드포인트 등록 (`/ws-chat`)
+- [x] 메시지 브로커 설정 (`/topic`, `/app`)
+- [x] ChannelInterceptor 추가
+    - [x] SUBSCRIBE 시 roomId/username 세션에 저장
 
-### 5.2. WebSocketEventListener (새로 생성)
-- [ ] handleWebSocketDisconnectListener() - 연결 끊김 감지
-    - [ ] 세션에서 roomId/username 추출
-    - [ ] chatRoomService.handleDisconnect() 호출
-    - [ ] LEAVE 메시지 브로드캐스트
-    - [ ] 방이 비었으면 삭제 → 로비에 DELETED 브로드캐스트
+### 5.2. WebSocketEventListener
+- [x] handleWebSocketDisconnectListener() - 연결 끊김 감지
+    - [x] 세션에서 roomId/username 추출
+    - [x] chatRoomService.handleDisconnect() 호출
+    - [x] LEAVE 메시지 브로드캐스트
+    - [x] 방이 비었으면 삭제 → 로비에 DELETED 브로드캐스트
 
 ### 5.3. WebConfig
-- [ ] REST API CORS 설정
+- [x] REST API CORS 설정
 
 ---
 

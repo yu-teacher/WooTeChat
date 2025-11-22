@@ -34,14 +34,14 @@
 ## 2. 서비스 계층
 
 ### 2.1. ChatRoomService
-- [ ] Map<String, ChatRoom> rooms - 방 목록 관리
-- [ ] createRoom(name) - 방 생성
-- [ ] findAllRooms() - 전체 방 목록 조회 (ACTIVE만)
-- [ ] findRoomById(roomId) - 특정 방 조회
-- [ ] deleteRoom(roomId) - 방 삭제 (종료된 방 제거)
-- [ ] addUserToRoom(roomId, username) - 사용자 입장
-- [ ] removeUserFromRoom(roomId, username) - 사용자 퇴장
-- [ ] handleDisconnect(roomId, username) - 연결 끊김 처리
+- [x] Map<String, ChatRoom> rooms - 방 목록 관리
+- [x] createRoom(name) - 방 생성
+- [x] findAllRooms() - 전체 방 목록 조회 (ACTIVE만)
+- [x] findRoomById(roomId) - 특정 방 조회
+- [x] deleteRoom(roomId) - 방 삭제 (종료된 방 제거)
+- [x] addUserToRoom(roomId, username) - 사용자 입장
+- [x] removeUserFromRoom(roomId, username) - 사용자 퇴장
+- [x] handleDisconnect(roomId, username) - 연결 끊김 처리
 
 ---
 
@@ -75,8 +75,8 @@
 ### 4.2. 응답 DTO (dto/response)
 - [ ] RoomInfoResponse - 방 정보 (roomId, roomName, userCount, status)
 - [ ] MessageResponse - 메시지 응답 (type, roomId, sender, content, timestamp)
-- [ ] LobbyUpdateResponse - 로비 업데이트 (type, room or roomId)
-    - [ ] type: CREATED, DELETED, UPDATED
+- [x] LobbyUpdateResponse - 로비 업데이트 (type, room or roomId)
+    - [x] type: CREATED, DELETED
 
 ---
 

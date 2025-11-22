@@ -3,31 +3,31 @@
 ## 1. 도메인 계층
 
 ### 1.1. ChatRoom (Entity)
-- [ ] roomId, roomName, participants, status, createdAt 필드
-- [ ] addUser(username) - 사용자 입장
-- [ ] removeUser(username) - 사용자 퇴장 (0명이면 자동 종료)
-- [ ] getUserCount() - 참가자 수 조회
-- [ ] isEmpty() - 방이 비었는지 확인
-- [ ] validateActive() - 활성 상태 검증
-- [ ] isClosed() - 종료 여부 확인
+- [x] roomId, roomName, participants, status, createdAt 필드
+- [x] addUser(username) - 사용자 입장
+- [x] removeUser(username) - 사용자 퇴장 (0명이면 자동 종료)
+- [x] getUserCount() - 참가자 수 조회
+- [x] isEmpty() - 방이 비었는지 확인
+- [x] validateActive() - 활성 상태 검증
+- [x] isClosed() - 종료 여부 확인
 
 ### 1.2. Participants (Value Object)
-- [ ] Set<String> usernames 필드
-- [ ] add(username) - 사용자 추가 (유효성 검증)
-- [ ] remove(username) - 사용자 제거
-- [ ] isEmpty() - 비어있는지 확인
-- [ ] getCount() - 사용자 수 조회
-- [ ] getUsernames() - 사용자 목록 조회 (방어적 복사)
+- [x] Set<String> usernames 필드
+- [x] add(username) - 사용자 추가 (유효성 검증)
+- [x] remove(username) - 사용자 제거
+- [x] isEmpty() - 비어있는지 확인
+- [x] getCount() - 사용자 수 조회
+- [x] getUsernames() - 사용자 목록 조회 (방어적 복사)
 
 ### 1.3. ChatMessage (Entity)
-- [ ] type, roomId, sender, content, timestamp 필드
-- [ ] enter(roomId, sender) - 입장 메시지 생성
-- [ ] talk(roomId, sender, content) - 대화 메시지 생성
-- [ ] leave(roomId, sender) - 퇴장 메시지 생성
+- [x] type, roomId, sender, content, timestamp 필드
+- [x] enter(roomId, sender) - 입장 메시지 생성
+- [x] talk(roomId, sender, content) - 대화 메시지 생성
+- [x] leave(roomId, sender) - 퇴장 메시지 생성
 
 ### 1.4. Enum
-- [ ] RoomStatus (ACTIVE, CLOSED)
-- [ ] MessageType (ENTER, TALK, LEAVE)
+- [x] RoomStatus (ACTIVE, CLOSED)
+- [x] MessageType (ENTER, TALK, LEAVE)
 
 ---
 

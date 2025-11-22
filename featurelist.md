@@ -48,33 +48,33 @@
 ## 3. 컨트롤러 계층
 
 ### 3.1. ChatRoomController (REST API)
-- [ ] `@GetMapping("/api/rooms")` - 방 목록 조회
-- [ ] `@PostMapping("/api/rooms")` - 방 생성
-- [ ] `@GetMapping("/api/rooms/{roomId}")` - 특정 방 조회
+- [x] `@GetMapping("/api/rooms")` - 방 목록 조회
+- [x] `@PostMapping("/api/rooms")` - 방 생성
+- [x] `@GetMapping("/api/rooms/{roomId}")` - 특정 방 조회
 
 ### 3.2. ChatWebSocketController
-- [ ] `@MessageMapping("/chat.sendMessage")` - 메시지 전송
-    - [ ] ENTER 타입 처리 (입장)
-    - [ ] TALK 타입 처리 (대화)
-    - [ ] LEAVE 타입 처리 (퇴장)
-- [ ] 브로드캐스트 (`/topic/chat/room/{roomId}`)
+- [x] `@MessageMapping("/chat.sendMessage")` - 메시지 전송
+    - [x] ENTER 타입 처리 (입장)
+    - [x] TALK 타입 처리 (대화)
+    - [x] LEAVE 타입 처리 (퇴장)
+- [x] 브로드캐스트 (`/topic/chat/room/{roomId}`)
 
 ### 3.3. LobbyWebSocketController (새로 생성)
-- [ ] `@MessageMapping("/lobby.subscribe")` - 로비 구독
-- [ ] 방 생성 시 브로드캐스트 (`/topic/lobby`)
-- [ ] 방 삭제 시 브로드캐스트 (`/topic/lobby`)
+- [x] `@MessageMapping("/lobby.subscribe")` - 로비 구독
+- [x] 방 생성 시 브로드캐스트 (`/topic/lobby`)
+- [x] 방 삭제 시 브로드캐스트 (`/topic/lobby`)
 
 ---
 
 ## 4. DTO 계층
 
 ### 4.1. 요청 DTO (dto/request)
-- [ ] CreateRoomRequest - 방 생성 (name)
-- [ ] SendMessageRequest - 메시지 전송 (type, roomId, sender, message)
+- [x] CreateRoomRequest - 방 생성 (name)
+- [x] SendMessageRequest - 메시지 전송 (type, roomId, sender, message)
 
 ### 4.2. 응답 DTO (dto/response)
-- [ ] RoomInfoResponse - 방 정보 (roomId, roomName, userCount, status)
-- [ ] MessageResponse - 메시지 응답 (type, roomId, sender, content, timestamp)
+- [x] RoomInfoResponse - 방 정보 (roomId, roomName, userCount, status)
+- [x] MessageResponse - 메시지 응답 (type, roomId, sender, content, timestamp)
 - [x] LobbyUpdateResponse - 로비 업데이트 (type, room or roomId)
     - [x] type: CREATED, DELETED
 
@@ -102,11 +102,6 @@
 
 ## 6. 예외 처리
 
-### 6.1. 커스텀 예외
-- [ ] RoomNotFoundException - 방을 찾을 수 없음
-- [ ] RoomClosedException - 종료된 방
-- [ ] InvalidUsernameException - 유효하지 않은 사용자명
-
-### 6.2. GlobalExceptionHandler
-- [ ] @ExceptionHandler로 예외 처리
-- [ ] 에러 메시지 브로드캐스트
+### 6.1. GlobalExceptionHandler
+- [x] @ExceptionHandler로 예외 처리
+- [x] 에러 메시지 브로드캐스트

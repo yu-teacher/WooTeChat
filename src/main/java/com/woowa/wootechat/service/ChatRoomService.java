@@ -4,6 +4,8 @@ import com.woowa.wootechat.domain.message.ChatMessage;
 import com.woowa.wootechat.domain.room.ChatRoom;
 import com.woowa.wootechat.domain.room.RoomStatus;
 import com.woowa.wootechat.dto.response.LobbyUpdateMessage;
+import com.woowa.wootechat.dto.response.MessageResponse;
+import com.woowa.wootechat.dto.response.RoomInfoResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
@@ -32,7 +34,7 @@ public class ChatRoomService {
         rooms.put(roomId, room);
 
         // 로비에 방 생성 알림
-        broadcastToLobby("CREATED", room);
+        broadcastToLobby("CREATED", RoomInfoResponse.from(room));
 
         return room;
     }
@@ -111,20 +113,11 @@ public class ChatRoomService {
     }
 
     /**
-     * 채팅 메시지 전송
-     */
-    public void sendMessage(String roomId, String sender, String content) {
-        ChatRoom room = findRoomById(roomId);
-
-        ChatMessage message = ChatMessage.talk(roomId, sender, content);
-        broadcastToRoom(roomId, message);
-    }
-
-    /**
      * 방에 메시지 브로드캐스트
      */
     private void broadcastToRoom(String roomId, ChatMessage message) {
-        messagingTemplate.convertAndSend("/topic/chat/room/" + roomId, message);
+        MessageResponse response = MessageResponse.from(message);
+        messagingTemplate.convertAndSend("/topic/chat/room/" + roomId, response);
     }
 
     /**

@@ -196,23 +196,4 @@ class ChatRoomServiceTest {
         assertThatCode(() -> chatRoomService.handleDisconnect("unknown-room", "user1"))
                 .doesNotThrowAnyException();
     }
-
-    @Test
-    void 채팅_메시지_전송() {
-        ChatRoom room = chatRoomService.createRoom("테스트방");
-        chatRoomService.addUserToRoom(room.getRoomId(), "user1");
-
-        chatRoomService.sendMessage(room.getRoomId(), "user1", "안녕하세요");
-
-        // 메시지 브로드캐스트 확인
-        verify(messagingTemplate, atLeastOnce())
-                .convertAndSend(eq("/topic/chat/room/" + room.getRoomId()), any(Object.class));
-    }
-
-    @Test
-    void 존재하지_않는_방에_메시지_전송시_예외() {
-        assertThatThrownBy(() -> chatRoomService.sendMessage("unknown-room", "user1", "안녕"))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("방을 찾을 수 없습니다");
-    }
 }

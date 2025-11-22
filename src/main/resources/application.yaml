@@ -1,3 +1,6 @@
 spring:
   application:
     name: wootechat
+
+server:
+  port: 8082

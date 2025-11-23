@@ -18,19 +18,19 @@ public class MessageResponse {
     private MessageType type;
     private String roomId;
     private String sender;
-    private String content;
+    private String message;
     private Instant timestamp;
 
     /**
      * ChatMessage 도메인 → DTO 변환
      */
-    public static MessageResponse from(ChatMessage message) {
+    public static MessageResponse from(ChatMessage chatMessage) {
         return new MessageResponse(
-                message.getType(),
-                message.getRoomId(),
-                message.getSender(),
-                message.getContent(),
-                message.getTimestamp()
+                chatMessage.getType(),
+                chatMessage.getRoomId(),
+                chatMessage.getSender(),
+                chatMessage.getContent(),
+                chatMessage.getTimestamp()
         );
     }
 }

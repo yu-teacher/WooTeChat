@@ -31,7 +31,9 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws-chat")
-                .setAllowedOriginPatterns("*")
+                .setAllowedOrigins(
+                        "http://192.168.0.4:3003",
+                        "http://varen.iptime.org:3003")
                 .withSockJS();
     }
 
